@@ -215,6 +215,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -235,11 +236,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -977,8 +973,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -989,9 +987,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1030,13 +1030,12 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This work was a part of a machine learning course I took during my Semester at the VUB in 2017. The course is given by Ann Nowé and Hugues Bersini. This notebook is a slightly adapte form of the work I did for the final project of this course. It takes former created ground truth data information and uses it as an input to train and test a multi layer perceptron (Courtesy to Frederik PRIEM who created the ground truth data). The code is heavily inspired by the tutorial "<a href="http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/">implementing a neural network from scratch</a>" by Dennie Britz. It is strongly recommended to also read his post to understand of what is going on.<br>
-The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APEX-Data/tree/master">here</a> on my github page.</br></p>
+<p>This work was a part of a machine learning course I took during my Semester at the VUB in 2017. The course is given by Ann Nowé and Hugues Bersini. This notebook is a slightly adapte form of the work I did for the final project of this course. It takes former created ground truth data information and uses it as an input to train and test a multi layer perceptron (Courtesy to Frederik PRIEM who created the ground truth data). The code is heavily inspired by the tutorial "<a href="http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/">implementing a neural network from scratch</a>" by Dennie Britz. It is strongly recommended to also read his post to understand of what is going on.<br />
+The code and the data can be found on my <a href="https://github.com/Thimm/MLP-For-APEX-Data/tree/master">github page</a>.</p>
 </div>
 </div>
 </div>
@@ -1056,8 +1055,7 @@ The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APE
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1065,8 +1063,7 @@ The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APE
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1094,8 +1091,7 @@ The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APE
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1201,8 +1197,7 @@ The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APE
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1284,8 +1279,7 @@ The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APE
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1320,7 +1314,8 @@ The code and the data can be found <a href="https://github.com/Thimm/MLP-For-APE
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Loss after iteration 0: 3.280113 for training data, 3.281052 for testing data. The accuracy for the testing data is 0.060000
 Loss after iteration 1000: 1.329054 for training data, 1.342006 for testing data. The accuracy for the testing data is 0.540000
@@ -1330,8 +1325,7 @@ Loss after iteration 1000: 1.329054 for training data, 1.342006 for testing data
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1344,7 +1338,7 @@ Loss after iteration 1000: 1.329054 for training data, 1.342006 for testing data
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">APEX_Image</span> <span class="o">=</span> <span class="n">envi</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">r"MLP For APEX Data/Image/SubSet_BC.hdr"</span><span class="p">)[:,:,:]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">APEX_Image</span> <span class="o">=</span> <span class="n">envi</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">"MLP For APEX Data/Image/SubSet_BC.hdr"</span><span class="p">)[:,:,:]</span>
 <span class="c1"># to reconstruct the images original size</span>
 <span class="n">image_shape</span> <span class="o">=</span> <span class="n">APEX_Image</span><span class="o">.</span><span class="n">shape</span>
 
@@ -1359,7 +1353,8 @@ Loss after iteration 1000: 1.329054 for training data, 1.342006 for testing data
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAAD8CAYAAADqmhgGAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3GeQHPW59/1vh+nuyWFndzZHrVariFBCoEAQRmSTTDLJ
@@ -4643,8 +4638,8 @@ j4HWs57/UN19DLjnPHpuJToN2A/srd/ubTRX4ApgT93zIPBf69sbyvMXnN/DzwctGs6T6KqGffXb
 obf+3zSia33fVwG765+Bp4CW1XJtzrRo0qTJRcNqn9I2adKkyXmjWfCaNGly0dAseE2aNLloaBa8
 Jk2aXDQ0C16TJk0uGpoFr0mTJhcNzYLXpEmTi4ZmwWvSpMlFw/8DsuugXxjy/RAAAAAASUVORK5C
 YII=
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -4678,7 +4673,8 @@ YII=
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>15.0
 30.0
@@ -4689,7 +4685,8 @@ YII=
 </pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAAD8CAYAAADqmhgGAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzsvXtYU2e6N/wLWSSshIOBBgkhIEHisVvcFsY41O6hKm0t
@@ -6278,12 +6275,13 @@ VQDWhIA87wKoB9ADujotBpAEGsyuBPARKPcf236NR/ZyAHdcRTlngLoB/wRQ4vm5M9RkBfADAN94
 5DwO4Nee90NKToXMP4Y3aRFycoJWNXoDOQ4AAABsSURBVBzz/JSy5yYUZfV8dzaALz33wD4AxsGS
 NdxpEUYYYXxvMNgubRhhhBHGVUNY4YURRhjfG4QVXhhhhPG9QVjhhRFGGN8bhBVeGGGE8b1BWOGF
 EUYY3xuEFV4YYYTxvUFY4YURRhjfG/wv1YFjO07Jba4AAAAASUVORK5CYII=
-">
-</img></div>
+" />
 </div>
 </div>
 </div>
 </div>
+</div>
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
